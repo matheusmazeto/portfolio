@@ -4,6 +4,9 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
+import CodeSnippet from './CodeSnippet/code-snippet'
+import FunctionalCounter from './counter'
+
 const components = {
   h1: ({ className, ...props }: React.HtmlHTMLAttributes<HTMLHeadElement>) => (
     <h1
@@ -136,15 +139,16 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: React.HtmlHTMLAttributes<HTMLPreElement>) => (
-    <pre
-      className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-lg bg-black p-4 [&>code]:bg-transparent',
-        className,
-      )}
-      {...props}
-    />
-  ),
+  // pre: ({ className, ...props }: React.HtmlHTMLAttributes<HTMLPreElement>) => (
+  //   <pre
+  //     className={cn(
+  //       'mb-4 mt-6 overflow-x-auto rounded-lg bg-black p-4 [&>code]:bg-transparent',
+  //       className,
+  //     )}
+  //     {...props}
+  //   />
+  // ),
+  pre: CodeSnippet,
   code: ({ className, ...props }: React.HtmlHTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
@@ -155,6 +159,8 @@ const components = {
     />
   ),
   Image,
+  CodeSnippet,
+  FunctionalCounter,
 }
 
 interface MdxProps {
